@@ -319,7 +319,7 @@ static int menu_sel = 0;
 static int menu_show_start = 0; // line at which menu display starts
 static int max_menu_rows;
 
-static unsigned cur_rainbow_color = 0;
+static int cur_rainbow_color = 0;
 static int gRainbowMode = 0;
 
 // Key event input queue
@@ -471,7 +471,7 @@ static void draw_virtualkeys_locked()
 static void draw_text_line(int row, const char* t, int align) {
     int col = 0;
     if (t[0] != '\0') {
-        //if (ui_get_rainbow_mode()) ui_rainbow_mode();
+        if (ui_get_rainbow_mode()) ui_rainbow_mode();
         int length = strnlen(t, MENU_MAX_COLS) * CHAR_WIDTH;
         switch(align)
         {
